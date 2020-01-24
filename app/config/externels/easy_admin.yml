@@ -1,0 +1,7 @@
+easy_admin:
+  entities:
+    # change the following to the namespaces of your own entities
+    - AppBundle\Entity\Enseignant
+    - AppBundle\Entity\Cours
+    - AppBundle\Entity\Chapitre
+    - AppBundle\Entity\Section

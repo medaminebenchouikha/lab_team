@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Liste of people{% endblock %}
+
+{% block body %}
+<h1>Liste of people</h1>
+        {% for message in app.session.flashbag.get('error') %}
+                <div class="alert alert-danger">
+                        {{ message }}
+                </div>
+        {% endfor %}
+<ul class="list-group">
+    {% for personne in personnes %}
+<li class="list-group-item">{{personne.nom}} {{ personne.prenom }} -- {{personne.age}} ans</li>
+
+        {% else %}
+        <li class="list-group-item-danger">Personne not found</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

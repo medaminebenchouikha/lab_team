@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+im child template
+{% endblock %}
+{% block body %}
+    <a href="{{ path('homepage') }}"> Taches </a>
+    <br>
+    <a href="{{ path('premier', {"_locale":"fr","nom":"med","prenom":"amine","age":20}) }}">Premier</a>
+    <br>
+    {{ parent() }}
+    <hr>
+im chid block
+{% endblock %}

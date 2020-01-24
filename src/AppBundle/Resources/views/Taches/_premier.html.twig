@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title>Bonjour</title>
+</head>
+<body>
+<div>
+    Goodmorning Today is {{ "now"|date("m/d/Y") }}
+</div>
+Hello {{ nom }} {{ prenom }}
+
+{% set foo ="one,two,three"|split(',') %}
+{% set fooo ="" %}
+
+{% if foo is defined %}
+    {{ dump(foo|sort) }}
+    <table>
+        {% for mavar in foo %}
+            <tr>
+                <td
+                        style="color: {% if loop.index is odd %} #5eb5e0 {% else %} #B04132 {% endif %}">
+                    {{ mavar|capitalize }}
+                </td>
+            </tr>
+        {% else %}
+            <tr><td>  My table is empty! </td></tr>
+        {% endfor %}
+    </table>
+{% else %}
+    vaiable undefined!
+{% endif %}
+</body>
+</html>

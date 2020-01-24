@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+{% block title %} List enseignant {% endblock %}
+
+{% block body %}
+ {% for enseignant in enseignants %}
+
+  <div class="card" style="width: 18rem;">
+   <img class="card-img-top"  style="width: 150px" src="{{asset(enseignant.NameImage)}}" alt="{{enseignant.nom}}">
+   <div class="card-body">
+    <h5 class="card-title">{{enseignant.nom}}</h5>
+    <p class="card-text">{{enseignant.cours.designation}}</p>
+    <ul class="list-group">
+    {% for section in enseignant.sections %}
+     <li class="list-group-item">{{ section.designation }}</li>
+     {% endfor %}
+    </ul>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+   </div>
+  </div>
+
+  {% endfor %}
+{% endblock %}

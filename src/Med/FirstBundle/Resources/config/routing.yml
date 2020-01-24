@@ -1,0 +1,5 @@
+med_first_homepage:
+    path:     /test/{name}/{age}
+    defaults: { _controller: MedFirstBundle:Default:index, name:med }
+    requirements:
+        age : \d+
